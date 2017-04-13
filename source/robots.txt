@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /CNAME
+Disallow: /README
+
+Allow: /
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+Disallow: /lib/
+
+Sitemap: http://uchuhimo.me/sitemap.xml
