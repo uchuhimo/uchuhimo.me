@@ -1,7 +1,7 @@
 ---
-title: 创世记：如何使用 Hexo 和 Github Pages 搭建这个博客
+title: 创世记：如何使用 Hexo 和 GitHub Pages 搭建这个博客
 date: 2017-04-11 16:29:50
-tags: [blog, hexo, NexT, Github]
+tags: [blog, hexo, NexT, GitHub]
 categories: 创世记
 ---
 
@@ -69,16 +69,16 @@ hexo generate
 hexo server
 ```
 
-## 创建 Github Pages
+## 创建 GitHub Pages
 
 创建名为`<username>.github.io`的项目即可
 
-## 部署博客到 Github Pages
+## 部署博客到 GitHub Pages
 
-### 设置 ssh 访问 Github 仓库
+### 设置 ssh 访问 GitHub 仓库
 
 - 生成 ssh key：`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-- 在Github->Settings->SSH and GPG keys->New SSH key添加"~/.ssh/id_rsa.pub"中的内容
+- 在GitHub->Settings->SSH and GPG keys->New SSH key添加"~/.ssh/id_rsa.pub"中的内容
 
 ### 安装 git-deploy 插件
 
@@ -122,7 +122,7 @@ hexo d -g
 ```
 7. 重新部署，并等待 DNS 生效
 
-如果需要绑定多个域名，可以将 Github Pages 绑定到其中一个域名，并把其他域名重定向到该域名。在 DNSPOD 中，这可以通过在需要重定向的域名中添加类型为"显性URL"的记录实现。具体请参考"[隐/显性转发](https://support.dnspod.cn/Kb/showarticle/tsid/21/)"和"[DNSPod 支持域名301重定向吗？](https://support.dnspod.cn/Kb/showarticle/tsid/112/)"。
+如果需要绑定多个域名，可以将 GitHub Pages 绑定到其中一个域名，并把其他域名重定向到该域名。在 DNSPOD 中，这可以通过在需要重定向的域名中添加类型为"显性URL"的记录实现。具体请参考"[隐/显性转发](https://support.dnspod.cn/Kb/showarticle/tsid/21/)"和"[DNSPod 支持域名301重定向吗？](https://support.dnspod.cn/Kb/showarticle/tsid/112/)"。
 
 ## 配置 Hexo
 
