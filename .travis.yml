@@ -1,0 +1,19 @@
+env:
+  global:
+    secure: DXGRK/dq17XnshbocwD72+O1OizHwsjv54CDAHnbNpVCsd3x/adeWcUVvjILkLqX1NpmuyLnRy0SV0YXiHNcb20hIK7Q0YWA8hSg4EnuwxjNqtK9Pyu8/aCMBDu9+nQpxu6lBkNKpJm/2w3DfL6fPBuPD7EKWKFZ+200V6wO43HtSu29XIkOp5DH+EIUsYe6+kFO2Aa7+0f+b6zaGMncG5D8HLs2/R2hqvk+p5GIyalWDwTGUDu3oFzHhtfVoM1vXIMP+Gje3mj2/6WvDKSG0MuEhvsGp09cItNNY2Mo4KpnztK0sCe/NwBQYzH+vo/9cMWKY3ETiQIC4BpggimtyWO2gZEhS11S0cCESFej0Yo4HeX7eSurr9rmm3H+Kta0/xnZJVPcbdw/VEsLk4nGEF0V95yCwbpYQHhswJ1nYtnuDiUeffjVwnTWy3/Mi3dt4eByyzGRttzM1Ctf8PxJOhHMCmaF/UH03Zj0R8dx5om9qdL7q+7gWicRojQkU2arynlaeflCYScl5SEDo1eNsDU0vWXFdkh5KWVe17frY9Pk6NrsPbQ5OIOWtq06FUP6Mhg30SW7EbHFkAfdsX82TmguX2tuXxYCgK93hfWFeUgp1yGYR5xa9ppXscd+vY78wVylI6z97R31fOOBaC+Ss1pOsmlZui8hwn/XTLXgyj4=
+
+language: node_js
+node_js:
+  - "7"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+  local_dir: public
+  target_branch: master
+  fqdn: http://uchuhimo.me
+  email: uchuhimo@outlook.com
+  name: uchuhimo
