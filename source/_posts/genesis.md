@@ -7,8 +7,8 @@ categories: 创世记
 
 ## 环境准备
 
-- 安装 Node.js
-官网下载：https://nodejs.org/en/download/
+- 安装 Node.js  
+官网下载：https://nodejs.org/en/download/  
 更换成国内镜像源：
 
   ```bash
@@ -180,10 +180,10 @@ avatar: <avatar-url>
   ```
 - 设置页面（编辑 `source/about/index.md`）
 - 修改菜单（编辑 `themes/next/_config.yml`）：
-    ```yaml
-    menu:
-      about: /about
-    ```
+  ```yaml
+  menu:
+    about: /about
+  ```
 
 ### 首页文章显示摘要
 
