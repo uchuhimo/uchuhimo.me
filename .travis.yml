@@ -6,6 +6,8 @@ language: node_js
 node_js:
   - "7"
 
+before_deploy:
+  - hexo generate
 deploy:
   provider: pages
   skip_cleanup: true
