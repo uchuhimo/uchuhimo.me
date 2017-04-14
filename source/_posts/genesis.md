@@ -11,29 +11,29 @@ categories: 创世记
 官网下载：https://nodejs.org/en/download/
 更换成国内镜像源：
 
-    ```bash
-[edit ~/.npmrc]
-registry=https://registry.npm.taobao.org
-[end]
-```
+  ```bash
+  [edit ~/.npmrc]
+  registry=https://registry.npm.taobao.org
+  [end]
+  ```
 
 - 安装 Hexo
-    ```bash
-npm install -g hexo-cli
-```
+  ```bash
+  npm install -g hexo-cli
+  ```
 
 <!-- more -->
 
 ## 常用 Hexo 命令
 
 - 初始化目录：`hexo init [folder]`
-- 新建文章：`hexo new [layout] <title>`或`hexo n [layout] <title>`
-- 生成静态文件：`hexo generate`或`hexo g`
-    - 监听文件变化：`hexo g --watch`或`hexo g -w`
-- 部署：`hexo deploy`或`hexo d`
-    - 先生成后部署：`hexo d -g`
-- 启动本地服务器：`hexo server`或`hexo s`
-    - 启动调试：`hexo s --debug`
+- 新建文章：`hexo new [layout] <title>` 或 `hexo n [layout] <title>`
+- 生成静态文件：`hexo generate` 或 `hexo g`
+  - 监听文件变化：`hexo g --watch` 或 `hexo g -w`
+- 部署：`hexo deploy` 或 `hexo d`
+  - 先生成后部署：`hexo d -g`
+- 启动本地服务器：`hexo server` 或 `hexo s`
+  - 启动调试：`hexo s --debug`
 - 清除缓存：`hexo clean`
 
 ## 使用 NexT 主题
@@ -47,7 +47,7 @@ git clone https://github.com/iissnan/hexo-theme-next themes/next
 
 ### 启用主题
 
-编辑`_config.yml`：
+编辑 `_config.yml`：
 
 ```yaml
 theme: next
@@ -55,7 +55,7 @@ theme: next
 
 ### 设置语言
 
-编辑`_config.yml`：
+编辑 `_config.yml`：
 
 ```yaml
 language: zh-Hans
@@ -71,14 +71,14 @@ hexo server
 
 ## 创建 GitHub Pages
 
-创建名为`<username>.github.io`的项目即可
+创建名为 `<username>.github.io` 的项目即可。
 
 ## 部署博客到 GitHub Pages
 
 ### 设置 ssh 访问 GitHub 仓库
 
-- 生成 ssh key：`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-- 在GitHub->Settings->SSH and GPG keys->New SSH key添加"~/.ssh/id_rsa.pub"中的内容
+- 生成 ssh key ：`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+- 在 GitHub -> Settings -> SSH and GPG keys -> New SSH key 添加 `~/.ssh/id_rsa.pub` 中的内容
 
 ### 安装 git-deploy 插件
 
@@ -88,7 +88,7 @@ npm install hexo-deployer-git --save
 
 ### 配置 git-deploy 插件
 
-编辑`_config.yml`：
+编辑 `_config.yml`：
 
 ```yaml
 deploy:
@@ -112,14 +112,14 @@ hexo d -g
         - 不同域名服务商的详细对比（主要是价格）：[Domain Name Price and Availability](https://www.domcomp.com)
 2. 注册 DNSPOD：https://www.dnspod.cn
 3. 在 DNSPOD 的控制台选择：域名解析 -> 全部域名 -> 添加域名，将在万网申请到的域名填入
-4. 在万网的域名控制台的相应域名依次选择：管理 -> 基本信息 -> 修改 DNS，将 DNS 修改为 DNSPOD 的 DNS：`f1g1ns1.dnspod.net`和`f1g1ns1.dnspod.net`
-5. 在 DNSPOD 的控制台选择相应域名并添加记录，主机记录使用"@"，记录类型选择"CNAME"，记录值使用`<username>.github.io`，保存
+4. 在万网的域名控制台的相应域名依次选择：管理 -> 基本信息 -> 修改 DNS，将 DNS 修改为 DNSPOD 的 DNS：`f1g1ns1.dnspod.net` 和 `f1g1ns1.dnspod.net`
+5. 在 DNSPOD 的控制台选择相应域名并添加记录，主机记录使用 "@"，记录类型选择 "CNAME"，记录值使用 "`<username>.github.io`"，保存
 6. 在 Hexo 中绑定域名：
-    ```bash
-[create/edit source/CNAME]
-<your-domain-name>
-[end]
-```
+  ```bash
+  [create/edit source/CNAME]
+  <your-domain-name>
+  [end]
+  ```
 7. 重新部署，并等待 DNS 生效
 
 如果需要绑定多个域名，可以将 GitHub Pages 绑定到其中一个域名，并把其他域名重定向到该域名。在 DNSPOD 中，这可以通过在需要重定向的域名中添加类型为"显性URL"的记录实现。具体请参考"[隐/显性转发](https://support.dnspod.cn/Kb/showarticle/tsid/21/)"和"[DNSPod 支持域名301重定向吗？](https://support.dnspod.cn/Kb/showarticle/tsid/112/)"。
@@ -128,7 +128,7 @@ hexo d -g
 
 ### 设置头像
 
-编辑`_config.yml`：
+编辑 `_config.yml`：
 
 ```yaml
 avatar: <avatar-url>
@@ -137,61 +137,61 @@ avatar: <avatar-url>
 ### 添加标签页面
 
 - 新建页面：
-    ```bash
-hexo new page tags
-```
-- 设置页面（编辑`source/tags/index.md`）：
-    ```yaml
----
-type: "tags"
-comments: false
----
-```
-- 修改菜单（编辑`themes/next/_config.yml`）：
-    ```yaml
-menu:
-  tags: /tags
-```
+  ```bash
+  hexo new page tags
+  ```
+- 设置页面（编辑 `source/tags/index.md`）：
+  ```yaml
+  ---
+  type: "tags"
+  comments: false
+  ---
+  ```
+- 修改菜单（编辑 `themes/next/_config.yml`）：
+  ```yaml
+  menu:
+    tags: /tags
+  ```
 
 ### 添加分类页面
 
 - 新建页面：
-    ```bash
-hexo new page categories
-```
-- 设置页面（编辑`source/categories/index.md`）：
-    ```yaml
----
-type: "categories"
-comments: false
----
-```
-- 修改菜单（编辑`themes/next/_config.yml`）：
-    ```yaml
-menu:
-  tags: /categories
-```
+  ```bash
+  hexo new page categories
+  ```
+- 设置页面（编辑 `source/categories/index.md`）：
+  ```yaml
+  ---
+  type: "categories"
+  comments: false
+  ---
+  ```
+- 修改菜单（编辑 `themes/next/_config.yml`）：
+  ```yaml
+  menu:
+    tags: /categories
+  ```
 
 ### 添加 about 页面
 
 - 新建页面：
-    ```bash
-hexo new page about
-```
-- 设置页面（编辑`source/about/index.md`）
-- 修改菜单（编辑`themes/next/_config.yml`）：
+  ```bash
+  hexo new page about
+  ```
+- 设置页面（编辑 `source/about/index.md`）
+- 修改菜单（编辑 `themes/next/_config.yml`）：
     ```yaml
-menu:
-  about: /about
-```
+    menu:
+      about: /about
+    ```
 
 ### 首页文章显示摘要
 
-在文章中适当位置插入`<!-- more -->`，该位置之前的部分即为摘要，会显示在首页中。
+在文章中适当位置插入 `<!-- more -->`，该位置之前的部分即为摘要，会显示在首页中。
 
 ### 显示文章更新时间
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Post meta display settings
@@ -201,7 +201,7 @@ post_meta:
 
 ### 设置代码高亮
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Available value:
@@ -212,7 +212,7 @@ highlight_theme: normal
 
 ### 添加 Creative Commons 署名协议
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Declare license on posts
@@ -231,7 +231,7 @@ post_copyright:
 
 使用 [Disqus](https://disqus.com) 作为评论系统。需要注意的是，Disqus 已经被墙，所以不翻墙是看不到的，只能相信大家都是带着梯子来的了。。。
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Disqus
@@ -241,7 +241,7 @@ disqus:
   count: true
 ```
 
-也可以使用[来必力](https://livere.com)代替 Disqus，编辑`themes/next/_config.yml`：
+也可以使用[来必力](https://livere.com)代替 Disqus，编辑 `themes/next/_config.yml`：
 
 ```yaml
 livere_uid: <your-uid>
@@ -249,7 +249,7 @@ livere_uid: <your-uid>
 
 ### 侧边栏社交链接
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Social links
@@ -271,7 +271,7 @@ social_icons:
 
 ### 开启打赏功能
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
@@ -281,7 +281,7 @@ alipay: /path/to/alipay-reward-image
 
 ### 腾讯公益404页面
 
-编辑`source/404.html`：
+编辑 `source/404.html`：
 
 ```html
 <!DOCTYPE HTML>
@@ -306,7 +306,7 @@ alipay: /path/to/alipay-reward-image
 
 ### 站点建立时间
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 since: 2017
@@ -314,7 +314,7 @@ since: 2017
 
 ### 阅读次数统计
 
-使用不蒜子统计，编辑`themes/next/_config.yml`：
+使用不蒜子统计，编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Show PV/UV of the website/page with busuanzi.
@@ -344,7 +344,7 @@ busuanzi_count:
 npm install hexo-generator-searchdb --save
 ```
 
-编辑`_config.yml`：
+编辑 `_config.yml`：
 
 ```yaml
 search:
@@ -354,7 +354,7 @@ search:
   limit: 10000
 ```
 
-编辑`themes/next/_config.yml`：
+编辑 `themes/next/_config.yml`：
 
 ```yaml
 # Local search
@@ -370,7 +370,7 @@ local_search:
 npm install hexo-generator-sitemap --save
 ```
 
-配置（编辑`_config.yml`）：
+配置（编辑 `_config.yml`）：
 
 ```yaml
 sitemap:
@@ -379,7 +379,7 @@ sitemap:
 
 ### 添加蜘蛛协议 robots.txt
 
-新建`source/robots.txt`：
+新建 `source/robots.txt`：
 
 ```
 User-agent: *
@@ -409,7 +409,7 @@ Sitemap: <your-domain-name>/sitemap.xml
 npm install hexo-generator-feed --save
 ```
 
-配置（编辑`_config.yml`）：
+配置（编辑 `_config.yml`）：
 
 ```yaml
 feed:
