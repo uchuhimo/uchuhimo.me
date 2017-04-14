@@ -66,13 +66,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: https://c2759b52cfbf4eb1581828e9ad3b82c50170be58@github.com/uchuhimo/uchuhimo.github.io.git
-  branch: master
-
 feed:
   type: atom
   path: atom.xml
