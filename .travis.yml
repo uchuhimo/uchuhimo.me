@@ -14,7 +14,7 @@ deploy:
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master
-  repo: https://github.com/uchuhimo/uchuhimo.github.io.git
+  repo: uchuhimo/uchuhimo.github.io.git
   local_dir: public
   target_branch: master
   fqdn: http://uchuhimo.me
