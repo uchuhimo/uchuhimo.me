@@ -50,12 +50,15 @@ categories: 创世记
 
 - 初始化目录：`hexo init [folder]`
 - 新建文章：`hexo new [layout] <title>` 或 `hexo n [layout] <title>`
+  - 新建草稿：`hexo new draft <title>`
+- 将草稿发布为正式文章：`hexo publish <title>`
 - 生成静态文件：`hexo generate` 或 `hexo g`
   - 监听文件变化：`hexo g --watch` 或 `hexo g -w`
 - 部署：`hexo deploy` 或 `hexo d`
   - 先生成后部署：`hexo d -g`
-- 启动本地服务器：`hexo server` 或 `hexo s`
+- 启动本地服务器（服务器会监听文件变化并自动更新）：`hexo server` 或 `hexo s`
   - 启动调试：`hexo s --debug`
+  - 预览草稿：`hexo s --draft`
 - 清除缓存：`hexo clean`
 
 ## 使用 NexT 主题
@@ -448,3 +451,4 @@ feed:
 [手把手教你使用Hexo + Github Pages搭建个人独立博客 | 令狐葱@前端笔记](https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/)  
 [Documentation | Hexo](https://hexo.io/docs/)  
 [NexT 使用文档](http://theme-next.iissnan.com/getting-started.html)  
+[如何使用Hexo寫草稿? | 點燈坊](http://oomusou.io/hexo/hexo-draft/)  
