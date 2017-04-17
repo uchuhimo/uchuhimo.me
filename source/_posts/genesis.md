@@ -1,6 +1,7 @@
 ---
 title: 如何使用 Hexo 和 GitHub Pages 搭建这个博客
 date: 2017-04-11 16:29:50
+updated: 2017-04-18 01:56:00
 tags: [blog, Hexo, NexT, GitHub]
 categories: 创世记
 ---
@@ -223,6 +224,14 @@ avatar: <avatar-url>
 post_meta:
   updated_at: true
 ```
+
+文章更新时间默认使用文件的修改时间，如果想自己指定，可以在文章的 Front-matter （即文件最上方以 `---` 分隔的区域）中加入：
+
+```yaml
+updated: <update-time>
+```
+
+其中，`<update-time>` 的格式示例为 `2017-04-11 16:29:50`。
 
 ### 设置代码高亮
 

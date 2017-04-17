@@ -1,6 +1,7 @@
 ---
 title: 使用 Travis 自动部署博客到 Github Pages
 date: 2017-04-15 21:12:50
+updated: 2017-04-16 02:23:00
 tags: [blog, Hexo, Travis, GitHub]
 categories: 创世记
 ---
