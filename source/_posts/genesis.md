@@ -408,7 +408,6 @@ sitemap:
 
 ```
 User-agent: *
-Disallow: /404.html
 Disallow: /CNAME
 Disallow: /README
 
@@ -418,10 +417,10 @@ Allow: /archives/
 Allow: /categories/
 Allow: /tags/
 
-Disallow: /css/
-Disallow: /images/
-Disallow: /js/
-Disallow: /lib/
+Allow: /css/
+Allow: /images/
+Allow: /js/
+Allow: /lib/
 
 Sitemap: <your-domain-name>/sitemap.xml
 ```

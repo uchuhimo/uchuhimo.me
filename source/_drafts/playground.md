@@ -1,5 +1,5 @@
 ---
-title: "playground"
+title: playground
 ---
 
 {% pullquote right %}
