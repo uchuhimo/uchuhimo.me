@@ -35,50 +35,52 @@ Travis 为 GitHub 上的开源项目提供免费的持续集成（CI）服务，
 - 注册 Travis 并将 Github Pages 的源码项目加入 Travis
 - 准备一个 Github 的 personal access token
 - 安装 Travis 客户端（加入了惯例的“换国内源”环节，不用谢我^\_^）：
-  ```bash
-  # install rvm
-  gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys D39DC0E3
-  \curl -sSL https://get.rvm.io | bash -s stable
-  source /home/uchuhimo/.rvm/scripts/rvm
-  echo "ruby_url=https://cache.ruby-china.org/pub/ruby" > ~/.rvm/user/db
 
-  # install ruby
-  rvm install 2.4.0
-  rvm use 2.4.0 --default
+    ```bash
+    # install rvm
+    gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys D39DC0E3
+    \curl -sSL https://get.rvm.io | bash -s stable
+    source /home/uchuhimo/.rvm/scripts/rvm
+    echo "ruby_url=https://cache.ruby-china.org/pub/ruby" > ~/.rvm/user/db
 
-  # configure gem
-  gem sources --add https://gems.ruby-china.org/ --remove http://rubygems.org/
+    # install ruby
+    rvm install 2.4.0
+    rvm use 2.4.0 --default
 
-  # install travis
-  gem install travis
-  ```
+    # configure gem
+    gem sources --add https://gems.ruby-china.org/ --remove http://rubygems.org/
+
+    # install travis
+    gem install travis
+    ```
 
 ## 配置 Travis
 
 - 在博客的源码项目下新建 `.travis.yml`：`touch .travis.yml`
 - 加密上文生成的 personal access token：`travis encrypt GITHUB_TOKEN="<personal-access-token>" --add`
 - 在 `.travis.yml` 中添加如下内容（记得替换变量）：
-  ```yaml
-  language: node_js
-  node_js:
-    - "7"
 
-  before_deploy:
-    - hexo generate # generate static site
-  deploy:
-    provider: pages # deploy to GitHub Pages
-    skip_cleanup: true # don't clean generated site
-    github_token: $GITHUB_TOKEN # provide the encrypted token
-    on:
-      branch: master
-    repo: <username>/<github-pages-repo-name> # optional, defaults to current repo
-    local_dir: public # optional, defaults to the current directory
-    target_branch: master # optional, defaults to "gh-pages"
-    fqdn: <custom-domain-url> # optional
-    project_name: <project-name> # optional, defaults to value of fqdn or repo
-    email: <committer-email> # optional, defaults to "deploy@travis-ci.org"
-    name: <committer-name> # optional, defaults to "Deployment Bot"
-  ```
+    ```yaml
+    language: node_js
+    node_js:
+      - "7"
+
+    before_deploy:
+      - hexo generate # generate static site
+    deploy:
+      provider: pages # deploy to GitHub Pages
+      skip_cleanup: true # don't clean generated site
+      github_token: $GITHUB_TOKEN # provide the encrypted token
+      on:
+        branch: master
+      repo: <username>/<github-pages-repo-name> # optional, defaults to current repo
+      local_dir: public # optional, defaults to the current directory
+      target_branch: master # optional, defaults to "gh-pages"
+      fqdn: <custom-domain-url> # optional
+      project_name: <project-name> # optional, defaults to value of fqdn or repo
+      email: <committer-email> # optional, defaults to "deploy@travis-ci.org"
+      name: <committer-name> # optional, defaults to "Deployment Bot"
+    ```
 - 提交更改即可触发 Travis 自动更新 Github Pages
 - 到 `https://travis-ci.org/<username>/<blog-source-repo-name>` 页面查看构建是否成功
 
@@ -90,10 +92,10 @@ Travis 为 GitHub 上的开源项目提供免费的持续集成（CI）服务，
 
 - 基于 SSH 的方案：[用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)
 
-  这是 Hexo 作者 tommy351 自己部署 Hexo 的官方网站用的方案，感觉看完都有点不想折腾了，真的很繁琐。
+    这是 Hexo 作者 tommy351 自己部署 Hexo 的官方网站用的方案，感觉看完都有点不想折腾了，真的很繁琐。
 - 基于 personal access token 的方案：[使用 Travis CI 自动更新 GitHub Pages](http://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/)
 
-  这是 NexT 作者 iissnan 部署 NexT 文档的方案，使用的和我一样是 personal access token，iissnan 自己撸了提交到 GitHub Pages 的命令，而我直接使用了 Travis 提供的部署插件，会更简单和易维护一些（其实真正的原因是我懒）。另一点不同是 iissnan 使用了 gulp 管理构建过程，而我直接使用 Hexo 的命令进行构建，因此构建的命令会有所不同。
+    这是 NexT 作者 iissnan 部署 NexT 文档的方案，使用的和我一样是 personal access token，iissnan 自己撸了提交到 GitHub Pages 的命令，而我直接使用了 Travis 提供的部署插件，会更简单和易维护一些（其实真正的原因是我懒）。另一点不同是 iissnan 使用了 gulp 管理构建过程，而我直接使用 Hexo 的命令进行构建，因此构建的命令会有所不同。
 
 ## 参考链接
 

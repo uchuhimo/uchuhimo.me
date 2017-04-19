@@ -32,34 +32,37 @@ categories: 创世记
 
 ## 环境准备
 
-- 安装 Node.js  
-官网下载：https://nodejs.org/en/download/  
-更换成国内镜像源：
+- 安装 Node.js
 
-  ```bash
-  [edit ~/.npmrc]
-  registry=https://registry.npm.taobao.org
-  [end]
-  ```
+    官网下载：https://nodejs.org/en/download/
+
+    更换成国内镜像源：
+
+    ```bash
+    [edit ~/.npmrc]
+    registry=https://registry.npm.taobao.org
+    [end]
+    ```
 
 - 安装 Hexo
-  ```bash
-  npm install -g hexo-cli
-  ```
+
+    ```bash
+    npm install -g hexo-cli
+    ```
 
 ## 常用 Hexo 命令
 
 - 初始化目录：`hexo init [folder]`
 - 新建文章：`hexo new [layout] <title>` 或 `hexo n [layout] <title>`
-  - 新建草稿：`hexo new draft <title>`
+    - 新建草稿：`hexo new draft <title>`
 - 将草稿发布为正式文章：`hexo publish <title>`
 - 生成静态文件：`hexo generate` 或 `hexo g`
-  - 监听文件变化：`hexo g --watch` 或 `hexo g -w`
+    - 监听文件变化：`hexo g --watch` 或 `hexo g -w`
 - 部署：`hexo deploy` 或 `hexo d`
-  - 先生成后部署：`hexo d -g`
+    - 先生成后部署：`hexo d -g`
 - 启动本地服务器（服务器会监听文件变化并自动更新）：`hexo server` 或 `hexo s`
-  - 启动调试：`hexo s --debug`
-  - 预览草稿：`hexo s --draft`
+    - 启动调试：`hexo s --debug`
+    - 预览草稿：`hexo s --draft`
 - 清除缓存：`hexo clean`
 
 ## 使用 NexT 主题
@@ -136,17 +139,18 @@ hexo d -g
         - [GoDaddy](https://godaddy.com)：世界上最大的域名注册商，但续费比较贵
         - [freenom](https://my.freenom.com/domains.php)：可以找到免费的域名，但都是很奇怪的后缀，比如.ml（感觉做机器学习的初创公司可以弄来玩玩，反正不要钱wwww）
         - 不同域名服务商的详细对比（主要是价格）：[Domain Name Price and Availability](https://www.domcomp.com)
-2. 注册 DNSPOD：https://www.dnspod.cn
-3. 在 DNSPOD 的控制台选择：域名解析 -> 全部域名 -> 添加域名，将在万网申请到的域名填入
-4. 在万网的域名控制台的相应域名依次选择：管理 -> 基本信息 -> 修改 DNS，将 DNS 修改为 DNSPOD 的 DNS：`f1g1ns1.dnspod.net` 和 `f1g1ns1.dnspod.net`
-5. 在 DNSPOD 的控制台选择相应域名并添加记录，主机记录使用 "@"，记录类型选择 "CNAME"，记录值使用 "`<username>.github.io`"，保存
-6. 在 Hexo 中绑定域名：
-  ```bash
-  [create/edit source/CNAME]
-  <your-domain-name>
-  [end]
-  ```
-7. 重新部署，并等待 DNS 生效
+1. 注册 DNSPOD：https://www.dnspod.cn
+1. 在 DNSPOD 的控制台选择：域名解析 -> 全部域名 -> 添加域名，将在万网申请到的域名填入
+1. 在万网的域名控制台的相应域名依次选择：管理 -> 基本信息 -> 修改 DNS，将 DNS 修改为 DNSPOD 的 DNS：`f1g1ns1.dnspod.net` 和 `f1g1ns1.dnspod.net`
+1. 在 DNSPOD 的控制台选择相应域名并添加记录，主机记录使用 "@"，记录类型选择 "CNAME"，记录值使用 "`<username>.github.io`"，保存
+1. 在 Hexo 中绑定域名：
+
+    ```bash
+    [create/edit source/CNAME]
+    <your-domain-name>
+    [end]
+    ```
+1. 重新部署，并等待 DNS 生效
 
 如果需要绑定多个域名，可以将 GitHub Pages 绑定到其中一个域名，并把其他域名重定向到该域名。在 DNSPOD 中，这可以通过在需要重定向的域名中添加类型为"显性URL"的记录实现。具体请参考"[隐/显性转发](https://support.dnspod.cn/Kb/showarticle/tsid/21/)"和"[DNSPod 支持域名301重定向吗？](https://support.dnspod.cn/Kb/showarticle/tsid/112/)"。
 
@@ -163,53 +167,61 @@ avatar: <avatar-url>
 ### 添加标签页面
 
 - 新建页面：
-  ```bash
-  hexo new page tags
-  ```
+
+    ```bash
+    hexo new page tags
+    ```
 - 设置页面（编辑 `source/tags/index.md`）：
-  ```yaml
-  ---
-  type: "tags"
-  comments: false
-  ---
-  ```
+
+    ```yaml
+    ---
+    type: "tags"
+    comments: false
+    ---
+    ```
 - 修改菜单（编辑 `themes/next/_config.yml`）：
-  ```yaml
-  menu:
-    tags: /tags
-  ```
+
+    ```yaml
+    menu:
+      tags: /tags
+    ```
 
 ### 添加分类页面
 
 - 新建页面：
-  ```bash
-  hexo new page categories
-  ```
+
+    ```bash
+    hexo new page categories
+    ```
 - 设置页面（编辑 `source/categories/index.md`）：
-  ```yaml
-  ---
-  type: "categories"
-  comments: false
-  ---
-  ```
+
+    ```yaml
+    ---
+    type: "categories"
+    comments: false
+    ---
+    ```
 - 修改菜单（编辑 `themes/next/_config.yml`）：
-  ```yaml
-  menu:
-    tags: /categories
-  ```
+
+    ```yaml
+    menu:
+      tags: /categories
+    ```
 
 ### 添加 about 页面
 
 - 新建页面：
-  ```bash
-  hexo new page about
-  ```
+
+    ```bash
+    hexo new page about
+    ```
 - 设置页面（编辑 `source/about/index.md`）
 - 修改菜单（编辑 `themes/next/_config.yml`）：
-  ```yaml
-  menu:
-    about: /about
-  ```
+
+    ```yaml
+    menu:
+      about: /about
+    ```
 
 ### 首页文章显示摘要
 
