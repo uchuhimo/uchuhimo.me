@@ -42,7 +42,7 @@ categories: Cheat Sheet
 - 强制跟踪指定文件：`git update-index --no-assume-unchanged <file>`
 - 强制不跟踪指定文件：`git update-index --assume-unchanged <file>`
 
-<!-- more -->
+<!--more-->
 
 ## Git 比较操作
 

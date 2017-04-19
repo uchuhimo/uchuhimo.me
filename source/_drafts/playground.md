@@ -4,6 +4,19 @@ title: playground
 
 http://hexo.io
 
+## Main Features
+
+- Support for [Markdown], [GFM] and [CommonMark]
+- Extensive configuration
+- Faster than the default renderer | `hexo-renderer-marked`
+- Safe ID for headings
+- Anchors for headings with ID
+- Footnotes[^footnote]
+- abbr: HTML
+- `<sub>` H<sub>2</sub>O
+- `<sup>` x<sup>2</sup>
+- `<ins>` <ins>Inserted</ins>
+
 {% pullquote right %}
 由于博客的源码和生成站点位于不同的代码仓库中（源码位于 [uchuhimo/uchuhimo.me](https://github.com/uchuhimo/uchuhimo.me)，生成的静态站点位于 [uchuhimo/uchuhimo.github.io](https://github.com/uchuhimo/uchuhimo.github.io)，即个人 GitHub Pages 的仓库），文章的发布过程需要提交两次。作为拥有懒惰这种美德的程序员，自然会开始折腾只需要提交一次、博客就自动部署到 GitHub Pages 上的方法——这里就轮到 Travis 登场了。
 {% endpullquote %}
@@ -79,3 +92,11 @@ http://hexo.io
 - 删除指定分支：`git branch -d <name>`
     - 删除未合并分支：`git branch -D <name>`
     - 删除未合并分支：`git branch -D <name>`
+
+[CommonMark]: http://commonmark.org/
+[Markdown]: http://daringfireball.net/projects/markdown/
+[GFM]: https://help.github.com/articles/github-flavored-markdown/
+
+[^footnote]: support it
+
+*[HTML]: Hyper Text Markup Language

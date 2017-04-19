@@ -28,7 +28,7 @@ categories: 创世记
 - 绑定自定义域名（可选）
 - Hexo 的详细配置过程
 
-<!-- more -->
+<!--more-->
 
 ## 环境准备
 
@@ -225,7 +225,7 @@ avatar: <avatar-url>
 
 ### 首页文章显示摘要
 
-在文章中适当位置插入 `<!-- more -->`，该位置之前的部分即为摘要，会显示在首页中。
+在文章中适当位置插入 `<!--more-->`，该位置之前的部分即为摘要，会显示在首页中。
 
 ### 显示文章更新时间
 
@@ -465,6 +465,42 @@ feed:
   content:
 ```
 
+### 添加脚注/上标/下标/缩写支持
+
+由于 Hexo 默认使用的 Markdown renderer 是 [marked]，它不支持脚注/上标/下标/缩写，我们可以使用 [Markdown-it] 替代 marked：
+
+```bash
+npm un hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it --save
+```
+
+配置（编辑 `_config.yml`）：
+
+```yaml
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: false
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: false
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+```
+
 ## 参考链接
 
 - [hexo你的博客 | 不如](http://ibruce.info/2013/11/22/hexo-your-blog/)
@@ -472,3 +508,6 @@ feed:
 - [Documentation | Hexo](https://hexo.io/docs/)
 - [NexT 使用文档](http://theme-next.iissnan.com/getting-started.html)
 - [如何使用Hexo寫草稿? | 點燈坊](http://oomusou.io/hexo/hexo-draft/)
+
+[marked]: https://github.com/hexojs/hexo-renderer-marked
+[Markdown-it]: https://github.com/celsomiranda/hexo-renderer-markdown-it
