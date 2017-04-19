@@ -88,11 +88,13 @@ Travis 为 GitHub 上的开源项目提供免费的持续集成（CI）服务，
 
 下面是我看到的几个比较靠谱的方案，以供对比：
 
-- 基于 SSH 的方案：[用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)  
+- 基于 SSH 的方案：[用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)
+
   这是 Hexo 作者 tommy351 自己部署 Hexo 的官方网站用的方案，感觉看完都有点不想折腾了，真的很繁琐。
-- 基于 personal access token 的方案：[使用 Travis CI 自动更新 GitHub Pages](http://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/)  
+- 基于 personal access token 的方案：[使用 Travis CI 自动更新 GitHub Pages](http://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/)
+
   这是 NexT 作者 iissnan 部署 NexT 文档的方案，使用的和我一样是 personal access token，iissnan 自己撸了提交到 GitHub Pages 的命令，而我直接使用了 Travis 提供的部署插件，会更简单和易维护一些（其实真正的原因是我懒）。另一点不同是 iissnan 使用了 gulp 管理构建过程，而我直接使用 Hexo 的命令进行构建，因此构建的命令会有所不同。
 
 ## 参考链接
 
-[GitHub Pages Deployment - Travis CI](https://docs.travis-ci.com/user/deployment/pages/)
+- [GitHub Pages Deployment - Travis CI](https://docs.travis-ci.com/user/deployment/pages/)

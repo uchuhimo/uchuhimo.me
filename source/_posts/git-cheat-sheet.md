@@ -6,15 +6,6 @@ tags: [git, cheat-sheet]
 categories: Cheat Sheet
 ---
 
-## 配置 committer
-
-```
-git config --global user.name <user-name>
-git config --global user.email <user-email>
-```
-
-<!-- more -->
-
 ## Git 本地更改操作
 
 ### 初始化
@@ -50,6 +41,8 @@ git config --global user.email <user-email>
 
 - 强制跟踪指定文件：`git update-index --no-assume-unchanged <file>`
 - 强制不跟踪指定文件：`git update-index --assume-unchanged <file>`
+
+<!-- more -->
 
 ## Git 比较操作
 
@@ -186,6 +179,11 @@ git config --global user.email <user-email>
 
 ## Git 配置
 
+- 配置 committer：
+  ```
+  git config --global user.name <user-name>
+  git config --global user.email <user-email>
+  ```
 - 让命令行输出显示颜色：`git config --global color.ui true`
 - 让 non-bare repo 能被 push：`git config receive.denyCurrentBranch updateInstead`
 - 让 Git 不要自动转换 CRLF：`git config --global core.autocrlf false`

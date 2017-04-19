@@ -455,8 +455,8 @@ feed:
 
 ## 参考链接
 
-[hexo你的博客 | 不如](http://ibruce.info/2013/11/22/hexo-your-blog/)  
-[手把手教你使用Hexo + Github Pages搭建个人独立博客 | 令狐葱@前端笔记](https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/)  
-[Documentation | Hexo](https://hexo.io/docs/)  
-[NexT 使用文档](http://theme-next.iissnan.com/getting-started.html)  
-[如何使用Hexo寫草稿? | 點燈坊](http://oomusou.io/hexo/hexo-draft/)  
+- [hexo你的博客 | 不如](http://ibruce.info/2013/11/22/hexo-your-blog/)
+- [手把手教你使用Hexo + Github Pages搭建个人独立博客 | 令狐葱@前端笔记](https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/)
+- [Documentation | Hexo](https://hexo.io/docs/)
+- [NexT 使用文档](http://theme-next.iissnan.com/getting-started.html)
+- [如何使用Hexo寫草稿? | 點燈坊](http://oomusou.io/hexo/hexo-draft/)
