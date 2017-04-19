@@ -1,7 +1,7 @@
 ---
 title: 如何使用 Hexo 和 GitHub Pages 搭建这个博客
 date: 2017-04-11 16:29:50
-updated: 2017-04-18 01:56:00
+updated: 2017-04-19 16:14:00
 tags: [blog, Hexo, NexT, GitHub]
 categories: 创世记
 ---
