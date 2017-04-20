@@ -3,6 +3,7 @@ Disallow: /CNAME
 Disallow: /README
 
 Allow: /
+Allow: /404.html
 Allow: /about/
 Allow: /archives/
 Allow: /categories/
