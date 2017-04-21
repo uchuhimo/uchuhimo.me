@@ -1,7 +1,7 @@
 ---
 title: 如何使用 Hexo 和 GitHub Pages 搭建这个博客
 date: 2017-04-11 16:29:50
-updated: 2017-04-19 16:14:00
+updated: 2017-04-22 03:02:00
 tags: [blog, Hexo, NexT, GitHub]
 categories: 创世记
 ---
@@ -384,29 +384,95 @@ busuanzi_count:
 
 ### 集成搜索服务
 
-使用本地搜索，安装 hexo-generator-searchdb 插件：
+使用本地搜索，按以下步骤配置：
 
-```bash
-npm install hexo-generator-searchdb --save
-```
+- 安装 hexo-generator-searchdb 插件：
 
-编辑 `_config.yml`：
+    ```bash
+    npm install hexo-generator-searchdb --save
+    ```
 
-```yaml
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-```
+- 编辑 `_config.yml`：
 
-编辑 `themes/next/_config.yml`：
+    ```yaml
+    search:
+      path: search.xml
+      field: post
+      format: html
+      limit: 10000
+    ```
 
-```yaml
-# Local search
-local_search:
-  enable: true
-```
+- 编辑 `themes/next/_config.yml`：
+
+    ```yaml
+    # Local search
+    local_search:
+      enable: true
+    ```
+
+本地搜索的一个替代方案是 Algolia，按以下步骤配置：
+
+- 前往 [Algolia 注册页面](https://www.algolia.com/)注册一个新账户。注册后的 14 天内拥有所有功能（包括收费类别的），之后若未续费会自动降级为免费账户，免费账户总共有 10,000 条记录，每月有 100,000 的可操作数。注册完成后，创建一个新的 Index。
+- 安装 hexo-algolia 插件（默认使用的 0.1.1 版本会出现问题，必须指定 0.2.0 版本）：
+
+    ```bash
+    npm install --save hexo-algolia@0.2.0
+    ```
+
+- 在 Algolia 网站上找到需要使用的配置值，包括 ApplicationID、Search API Key、Admin API Key。
+
+    编辑 `_config.yml`：
+
+    ```yaml
+    algolia:
+      applicationID: <application-id>
+      apiKey: <search-api-key>
+      indexName: <index-name>
+      chunkSize: 5000
+    ```
+
+    由于 Admin API Key 需要保密保存，我们在一个单独的文件 `_config.private.yml` 中配置它：
+
+    ```yaml
+    algolia:
+      adminApiKey: <admin-api-key>
+    ```
+
+    如果使用了 Git 进行源码管理的话，在 `.gitignore` 中忽略 `_config.private.yml` 和 `_multiconfig.yml` （这是在更新 Index 过程中合并 `_config.yml` 和 `_config.private.yml` 的内容生成的文件，里面也包含 Admin API Key），防止 Admin API Key 被公开到 GitHub 等托管网站上。
+
+- 执行以下命令更新 Index：
+
+    ```bash
+    hexo algolia --config _config.yml,_config.private.yml
+    ```
+
+    需要注意的是，在目前的 3.3.1 版本的 Hexo 中，该命令会出现下列报错信息：
+
+    ```
+    21:15:11.652 ERROR Local hexo not found in C:\projects\archive\xxx
+    11:15:11.654 ERROR Try running: 'npm install hexo --save'
+    ```
+
+    这是 Hexo 的 bug，具体请参考：
+
+    - [ERROR when trying to use two alternative configs · Issue #2518 · hexojs/hexo](https://github.com/hexojs/hexo/issues/2518)
+    - [Fix multiple config issue #2518 by NoahDragon · Pull Request #2520 · hexojs/hexo](https://github.com/hexojs/hexo/pull/2520)
+
+    该 bug 已在该 commit 中修复：[Fix multiple config issue #2518 (#2520) · hexojs/hexo@fbdee90](https://github.com/hexojs/hexo/commit/fbdee9043655a89fe0284f61cbaae88fd9a783e9)，估计会在下版本中 release，等不及的朋友可以自己参照该 commit 手动修改。
+
+- 编辑 `themes/next/_config.yml`：
+
+    ```yaml
+    # Algolia Search
+    algolia_search:
+      enable: true
+      hits:
+        per_page: 10
+      labels:
+        input_placeholder: Search for Posts
+        hits_empty: "We didn't find any results for the search: ${query}"
+        hits_stats: "${hits} results found in ${time} ms"
+    ```
 
 ### 添加 sitemap 插件
 
