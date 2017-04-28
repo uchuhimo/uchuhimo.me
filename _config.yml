@@ -80,7 +80,7 @@ search:
   path: search.xml
   field: post
   format: html
-  limit: 10000
+  limit: '10000'
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
