@@ -446,7 +446,7 @@ busuanzi_count:
     hexo algolia --config _config.yml,_config.private.yml
     ```
 
-    需要注意的是，在目前的 3.3.1 版本的 Hexo 中，该命令会出现下列报错信息：
+    需要注意的是，在 3.3.1 版本的 Hexo 中，该命令会出现下列报错信息：
 
     ```
     21:15:11.652 ERROR Local hexo not found in C:\projects\archive\xxx
@@ -458,7 +458,7 @@ busuanzi_count:
     - [ERROR when trying to use two alternative configs · Issue #2518 · hexojs/hexo](https://github.com/hexojs/hexo/issues/2518)
     - [Fix multiple config issue #2518 by NoahDragon · Pull Request #2520 · hexojs/hexo](https://github.com/hexojs/hexo/pull/2520)
 
-    该 bug 已在该 commit 中修复：[Fix multiple config issue #2518 (#2520) · hexojs/hexo@fbdee90](https://github.com/hexojs/hexo/commit/fbdee9043655a89fe0284f61cbaae88fd9a783e9)，估计会在下版本中 release，等不及的朋友可以自己参照该 commit 手动修改。
+    该 bug 已在该 commit 中修复：[Fix multiple config issue #2518 (#2520) · hexojs/hexo@fbdee90](https://github.com/hexojs/hexo/commit/fbdee9043655a89fe0284f61cbaae88fd9a783e9)，并在 3.3.5 版本中 release。
 
 - 编辑 `themes/next/_config.yml`：
 
