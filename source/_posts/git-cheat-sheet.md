@@ -18,6 +18,7 @@ categories: Cheat Sheet
     - 添加所有修改到暂存区：`git add .`
 - 将暂存区的修改提交到版本库：`git commit` -> 编辑 commit message -> 保存
     - commit message 较简单时，可以：`git commit -m "<message>"`
+- 为文件添加执行权限，并将修改添加到暂存区：`git update-index --chmod=+x <file>`
 
 ### 回退修改
 
