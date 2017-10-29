@@ -141,7 +141,7 @@ hexo d -g
         - 不同域名服务商的详细对比（主要是价格）：[Domain Name Price and Availability](https://www.domcomp.com)
 1. 注册 DNSPOD：https://www.dnspod.cn
 1. 在 DNSPOD 的控制台选择：域名解析 -> 全部域名 -> 添加域名，将在万网申请到的域名填入
-1. 在万网的域名控制台的相应域名依次选择：管理 -> 基本信息 -> 修改 DNS，将 DNS 修改为 DNSPOD 的 DNS：`f1g1ns1.dnspod.net` 和 `f1g1ns1.dnspod.net`
+1. 在万网的域名控制台的相应域名依次选择：管理 -> 基本信息 -> 修改 DNS，将 DNS 修改为 DNSPOD 的 DNS：`f1g1ns1.dnspod.net` 和 `f1g1ns2.dnspod.net`
 1. 在 DNSPOD 的控制台选择相应域名并添加记录，主机记录使用 "@"，记录类型选择 "CNAME"，记录值使用 "`<username>.github.io`"，保存
 1. 在 Hexo 中绑定域名：
 
