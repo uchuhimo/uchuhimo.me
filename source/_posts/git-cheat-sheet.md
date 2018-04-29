@@ -225,6 +225,14 @@ categories: Cheat Sheet
     }
     color_my_prompt
     ```
+- 支持同一 group 的多个用户 push 到同一 bare repo：
+
+    ```bash
+    git config core.sharedRepository group
+    chgrp -R <group-name> .
+    chmod -R g+rwX .
+    find . -type d -exec chmod g+s '{}' +
+    ```
 
 ## 豆知识
 
